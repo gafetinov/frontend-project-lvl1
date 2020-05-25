@@ -2,7 +2,7 @@ install:
 	npm install
 
 brain-games:
-	node bin/brain-game
+	node bin/brain-games
 
 publish:
 	npm publish --dry-run
