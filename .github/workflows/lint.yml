@@ -6,5 +6,5 @@ jobs:
   lint:
     name: Check code with ESLint
     steps:
-      name: lint
-      run: make lint
+      - name: lint
+        run: make lint
