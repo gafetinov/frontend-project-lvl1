@@ -5,6 +5,7 @@ on: [push]
 jobs:
   lint:
     name: Check code with ESLint
+    runs-on: ubuntu-latest
     steps:
       - name: lint
         run: make lint
