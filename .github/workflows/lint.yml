@@ -1,0 +1,10 @@
+name: Greet Everyone
+
+on: [push]
+
+jobs:
+  lint:
+    name: Check code with ESLint
+    steps:
+      name: lint
+      run: make lint
