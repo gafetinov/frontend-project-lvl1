@@ -6,6 +6,11 @@ The essence of the game is as follows: a random number is shown to the user. And
 
 Gameplay examples: https://asciinema.org/a/XHuGXoJqyYbbjaaHAI6dhku9n
 
+## Brain-calc
+The essence of the game is as follows: the user is shown a random mathematical expression, for example `35 + 16`, which must be calculated and written down the correct answer.
+
+Gameplay examples: https://asciinema.org/a/nb88AMXFSiUXtlQNwWmVAPPy4
+
 ---
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 [![Maintainability](https://github.com/gafetinov/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/gafetinov/frontend-project-lvl1/actions)
