@@ -1,13 +1,12 @@
 import readlineSync from 'readline-sync';
-import random from 'lodash/random.js';
+import { QUESTION_COUNT } from './shared';
 
 let USER_NAME;
 
-const isEven = (number) => number % 2 === 0;
-
-const tellRule = (rule) => {
-  console.log(rule);
+const quitGame = () => {
+  process.exit();
 };
+
 
 const verdict = (correctAnswer, userAnswer) => {
   if (userAnswer === correctAnswer) {
@@ -15,7 +14,7 @@ const verdict = (correctAnswer, userAnswer) => {
   } else {
     console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
     console.log(`Let's try again, ${USER_NAME}!`);
-    process.exit();
+    quitGame();
   }
 };
 
@@ -43,13 +42,11 @@ export const greet = () => {
   console.log(`Hello, ${USER_NAME}!`);
 };
 
-export const playEvenGame = () => {
+export const playGame = ({
+  rule, questionGenerator, answerGenerator, questionCount = QUESTION_COUNT,
+}) => {
   greet();
-  tellRule('Answer "yes" if the number is even, otherwise answer "no".');
-  askQuestions(
-    () => random(0, 100),
-    (question) => (isEven(question) ? 'yes' : 'no'),
-    3,
-  );
+  console.log(rule);
+  askQuestions(questionGenerator, answerGenerator, questionCount);
   congratulate();
 };
