@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { QUESTION_COUNT } from './shared';
+import { QUESTION_COUNT } from './shared.js';
 
 let USER_NAME;
 
@@ -23,11 +23,11 @@ const getAnswerToQuestion = (question) => {
   return readlineSync.question('Your answer: ');
 };
 
-const askQuestions = (questionGenerator, responseGenerator, questionCount) => {
+const askQuestions = (questionGenerator, answerGenerator, questionCount) => {
   for (let i = 0; i < questionCount; i += 1) {
     const question = questionGenerator();
     const userAnswer = getAnswerToQuestion(question);
-    const correctAnswer = responseGenerator(question);
+    const correctAnswer = answerGenerator(question);
     verdict(correctAnswer, userAnswer);
   }
 };
