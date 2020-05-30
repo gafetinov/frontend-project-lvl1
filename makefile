@@ -16,6 +16,9 @@ brain-gcd:
 brain-progression:
 	node bin/brain-progression
 
+brain-prime:
+	node bin brain/brain-prime
+
 publish:
 	npm publish --dry-run
 
