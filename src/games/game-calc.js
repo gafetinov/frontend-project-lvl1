@@ -1,5 +1,5 @@
 import { playGame } from '../game-engine.js';
-import { getRandomNumber } from '../shared.js';
+import getRandomNumber from './shared.js';
 
 const operations = {
   0: '-',
@@ -15,7 +15,7 @@ const getRandomOperation = () => {
 
 const getRandomArithmeticExpression = () => `${getRandomNumber()} ${getRandomOperation()} ${getRandomNumber()}`;
 
-const evaluateExpression = (expression) => {
+const calculateExpression = (expression) => {
   const parts = expression.split(' ');
   const firstNumber = Number(parts[0]);
   const operation = parts[1];
@@ -36,7 +36,7 @@ const playCalcGame = () => {
   playGame({
     rule: 'What is the result of the expression?',
     questionGenerator: getRandomArithmeticExpression,
-    answerGenerator: evaluateExpression,
+    answerGenerator: calculateExpression,
   });
 };
 

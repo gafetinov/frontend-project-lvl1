@@ -1,12 +1,13 @@
 import { playGame } from '../game-engine.js';
-import { getRandomNumber } from '../shared.js';
+import getRandomNumber from './shared.js';
 
 const missingTerm = '..';
+const maxDifference = 20;
 
 const generateProgression = (length = 0) => {
   const progression = [];
   let currentTerm = getRandomNumber();
-  const difference = getRandomNumber(20);
+  const difference = getRandomNumber(maxDifference);
   for (let i = 0; i < length; i += 1) {
     progression.push(currentTerm += difference);
   }

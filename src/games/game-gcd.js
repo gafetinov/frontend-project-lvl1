@@ -1,5 +1,5 @@
 import { playGame } from '../game-engine.js';
-import { getRandomNumber } from '../shared.js';
+import getRandomNumber from './shared.js';
 
 const getTwoRandomNumbers = () => `${getRandomNumber()} ${getRandomNumber()}`;
 

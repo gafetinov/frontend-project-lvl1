@@ -1,12 +1,12 @@
 import readlineSync from 'readline-sync';
-import { QUESTION_COUNT } from './shared.js';
+
 
 let USER_NAME;
+const QUESTION_COUNT = 3;
 
 const quitGame = () => {
   process.exit();
 };
-
 
 const verdict = (correctAnswer, userAnswer) => {
   if (userAnswer === correctAnswer) {
@@ -26,8 +26,8 @@ const getAnswerToQuestion = (question) => {
 const askQuestions = (questionGenerator, answerGenerator, questionCount) => {
   for (let i = 0; i < questionCount; i += 1) {
     const question = questionGenerator();
-    const userAnswer = getAnswerToQuestion(question);
     const correctAnswer = answerGenerator(question);
+    const userAnswer = getAnswerToQuestion(question);
     verdict(correctAnswer, userAnswer);
   }
 };

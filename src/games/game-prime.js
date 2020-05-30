@@ -1,5 +1,5 @@
 import { playGame } from '../game-engine.js';
-import { getRandomNumber } from '../shared.js';
+import getRandomNumber from './shared.js';
 
 const isPrime = (number) => {
   for (let i = 2; i <= Math.sqrt(number); i += 1) {
