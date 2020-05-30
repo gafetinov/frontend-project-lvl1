@@ -16,6 +16,11 @@ The user needs to calculate the greatest common divisor
 
 Gameplay examples: https://asciinema.org/a/4jrYEPH5dAmlTLsghTDymRq00
 
+## Brain-progression
+The user needs to find the missing term in arithmetic progression
+
+Gameplay examples: https://asciinema.org/a/BabDAmkNhUyHmxycbkCCDGmJa
+
 ---
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 [![Maintainability](https://github.com/gafetinov/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/gafetinov/frontend-project-lvl1/actions)
