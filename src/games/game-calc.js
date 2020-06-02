@@ -13,13 +13,7 @@ const getRandomOperation = () => {
   return operations[operationNumber];
 };
 
-const getRandomArithmeticExpression = () => `${getRandomNumber()} ${getRandomOperation()} ${getRandomNumber()}`;
-
-const calculateExpression = (expression) => {
-  const parts = expression.split(' ');
-  const firstNumber = Number(parts[0]);
-  const operation = parts[1];
-  const secondNumber = Number(parts[2]);
+const calculateExpression = (firstNumber, secondNumber, operation) => {
   switch (operation) {
     case '+':
       return String(firstNumber + secondNumber);
@@ -32,14 +26,17 @@ const calculateExpression = (expression) => {
   }
 };
 
-const taskGenerator = () => {
-  const question = getRandomArithmeticExpression();
-  const answer = calculateExpression(question);
+const arithmeticTaskGenerator = () => {
+  const firstNumber = getRandomNumber();
+  const secondNumber = getRandomNumber();
+  const operation = getRandomOperation();
+  const question = `${firstNumber} ${operation} ${secondNumber}`;
+  const answer = calculateExpression(firstNumber, secondNumber, operation);
   return { question, answer };
 };
 
 const playCalcGame = () => {
-  playGame('What is the result of the expression?', taskGenerator);
+  playGame('What is the result of the expression?', arithmeticTaskGenerator);
 };
 
 export default playCalcGame;
