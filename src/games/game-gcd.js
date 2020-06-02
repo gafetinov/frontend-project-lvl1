@@ -1,4 +1,4 @@
-import { playGame } from '../game-engine.js';
+import playGame from '../game-engine.js';
 import getRandomNumber from './shared.js';
 
 const getTwoRandomNumbers = () => `${getRandomNumber()} ${getRandomNumber()}`;
@@ -23,11 +23,11 @@ const answerGenerator = (expression) => {
 };
 
 const playGcdGame = () => {
-  playGame({
-    rule: 'Find the greatest common divisor of given numbers.',
-    questionGenerator: getTwoRandomNumbers,
+  playGame(
+    'Find the greatest common divisor of given numbers.',
+    getTwoRandomNumbers,
     answerGenerator,
-  });
+  );
 };
 
 export default playGcdGame;

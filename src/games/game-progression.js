@@ -1,4 +1,4 @@
-import { playGame } from '../game-engine.js';
+import playGame from '../game-engine.js';
 import getRandomNumber from './shared.js';
 
 const missingTerm = '..';
@@ -49,11 +49,11 @@ const findMissingTerm = (progressionString) => {
 };
 
 const playGameProgression = () => {
-  playGame({
-    rule: 'What number is missing in the progression?',
-    questionGenerator: generateProgressionWithMissingTerm,
-    answerGenerator: findMissingTerm,
-  });
+  playGame(
+    'What number is missing in the progression?',
+    generateProgressionWithMissingTerm,
+    findMissingTerm,
+  );
 };
 
 export default playGameProgression;

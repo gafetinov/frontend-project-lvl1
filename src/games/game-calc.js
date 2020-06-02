@@ -1,4 +1,4 @@
-import { playGame } from '../game-engine.js';
+import playGame from '../game-engine.js';
 import getRandomNumber from './shared.js';
 
 const operations = {
@@ -33,11 +33,11 @@ const calculateExpression = (expression) => {
 };
 
 const playCalcGame = () => {
-  playGame({
-    rule: 'What is the result of the expression?',
-    questionGenerator: getRandomArithmeticExpression,
-    answerGenerator: calculateExpression,
-  });
+  playGame(
+    'What is the result of the expression?',
+    getRandomArithmeticExpression,
+    calculateExpression,
+  );
 };
 
 export default playCalcGame;
