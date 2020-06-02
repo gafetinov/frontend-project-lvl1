@@ -2,9 +2,6 @@ import random from 'lodash/random.js';
 import playGame from '../game-engine.js';
 
 
-const minGuessedNumber = 1;
-const maxGuessedNumber = 100;
-
 const isPrime = (number) => {
   if (number < 2) {
     return false;
@@ -16,7 +13,7 @@ const isPrime = (number) => {
 };
 
 const taskGenerator = () => {
-  const question = random(minGuessedNumber, maxGuessedNumber);
+  const question = random(0, 100);
   const answer = isPrime(question) ? 'yes' : 'no';
   return { question, answer };
 };
