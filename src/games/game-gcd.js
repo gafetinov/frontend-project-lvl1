@@ -22,11 +22,16 @@ const answerGenerator = (expression) => {
   return String(getGcd(firstNumber, secondNumber));
 };
 
+const taskGenerator = () => {
+  const question = getTwoRandomNumbers();
+  const answer = answerGenerator(question);
+  return { question, answer };
+};
+
 const playGcdGame = () => {
   playGame(
     'Find the greatest common divisor of given numbers.',
-    getTwoRandomNumbers,
-    answerGenerator,
+    taskGenerator,
   );
 };
 

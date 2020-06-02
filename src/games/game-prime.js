@@ -8,13 +8,16 @@ const isPrime = (number) => {
   return true;
 };
 
-const answerGenerator = (number) => (isPrime(number) ? 'yes' : 'no');
+const taskGenerator = () => {
+  const question = getRandomNumber();
+  const answer = isPrime(question) ? 'yes' : 'no';
+  return { question, answer };
+};
 
 const playGamePrime = () => {
   playGame(
     'Answer "yes" if given number is prime. Otherwise answer "no".',
-    getRandomNumber,
-    answerGenerator,
+    taskGenerator,
   );
 };
 

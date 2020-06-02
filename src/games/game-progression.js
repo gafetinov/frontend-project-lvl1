@@ -48,11 +48,16 @@ const findMissingTerm = (progressionString) => {
   ).toString();
 };
 
+const taskGenerator = () => {
+  const question = generateProgressionWithMissingTerm();
+  const answer = findMissingTerm(question);
+  return { question, answer };
+};
+
 const playGameProgression = () => {
   playGame(
     'What number is missing in the progression?',
-    generateProgressionWithMissingTerm,
-    findMissingTerm,
+    taskGenerator,
   );
 };
 

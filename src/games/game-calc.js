@@ -32,12 +32,14 @@ const calculateExpression = (expression) => {
   }
 };
 
+const taskGenerator = () => {
+  const question = getRandomArithmeticExpression();
+  const answer = calculateExpression(question);
+  return { question, answer };
+};
+
 const playCalcGame = () => {
-  playGame(
-    'What is the result of the expression?',
-    getRandomArithmeticExpression,
-    calculateExpression,
-  );
+  playGame('What is the result of the expression?', taskGenerator);
 };
 
 export default playCalcGame;
