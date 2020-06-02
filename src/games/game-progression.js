@@ -2,16 +2,12 @@ import random from 'lodash/random.js';
 import playGame from '../game-engine.js';
 
 const missingTermSign = '..';
-const minDifference = 1;
-const maxDifference = 20;
 const progressionLength = 10;
-const minFirstTerm = 0;
-const maxFirstTerm = 100;
 
 const generateProgression = (length = 0) => {
   const progression = [];
-  let currentTerm = random(minFirstTerm, maxFirstTerm);
-  const difference = random(minDifference, maxDifference);
+  let currentTerm = random(0, 100);
+  const difference = random(1, 20);
   for (let i = 0; i < length; i += 1) {
     progression.push(currentTerm += difference);
   }
