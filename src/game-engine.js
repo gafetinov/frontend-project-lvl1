@@ -36,7 +36,7 @@ const congratulate = () => {
   console.log(`Congratulations, ${USER_NAME}!`);
 };
 
-export const greet = () => {
+const greet = () => {
   console.log('Welcome to the Brain Games!');
   USER_NAME = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${USER_NAME}!`);
