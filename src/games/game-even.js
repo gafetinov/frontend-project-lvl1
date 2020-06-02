@@ -1,10 +1,14 @@
+import random from 'lodash/random.js';
 import playGame from '../game-engine.js';
-import getRandomNumber from './shared.js';
+
+
+const minGuessedNumber = 1;
+const maxGuessedNumber = 100;
 
 const isEven = (number) => number % 2 === 0;
 
 const taskGenerator = () => {
-  const question = getRandomNumber();
+  const question = random(minGuessedNumber, maxGuessedNumber);
   const answer = isEven(question) ? 'yes' : 'no';
   return { question, answer };
 };

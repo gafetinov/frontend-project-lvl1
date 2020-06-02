@@ -1,6 +1,8 @@
+import random from 'lodash/random.js';
 import playGame from '../game-engine.js';
-import getRandomNumber from './shared.js';
 
+const minGuessedNumber = 0;
+const maxGuessedNumber = 50;
 const operations = {
   0: '-',
   1: '+',
@@ -9,7 +11,7 @@ const operations = {
 
 const getRandomOperation = () => {
   const operationCount = Object.keys(operations).length;
-  const operationNumber = getRandomNumber(operationCount - 1);
+  const operationNumber = random(0, operationCount - 1);
   return operations[operationNumber];
 };
 
@@ -27,8 +29,8 @@ const calculateExpression = (firstNumber, secondNumber, operation) => {
 };
 
 const arithmeticTaskGenerator = () => {
-  const firstNumber = getRandomNumber();
-  const secondNumber = getRandomNumber();
+  const firstNumber = random(minGuessedNumber, maxGuessedNumber);
+  const secondNumber = random(minGuessedNumber, maxGuessedNumber);
   const operation = getRandomOperation();
   const question = `${firstNumber} ${operation} ${secondNumber}`;
   const answer = calculateExpression(firstNumber, secondNumber, operation);

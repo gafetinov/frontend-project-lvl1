@@ -1,8 +1,11 @@
+import random from 'lodash/random.js';
 import playGame from '../game-engine.js';
-import getRandomNumber from './shared.js';
 
 
-const findDividors = (number) => {
+const minGuessedNumber = 1;
+const maxGuessedNumber = 100;
+
+const findDivisors = (number) => {
   const dividers = [1, number];
   for (let i = 2; i <= number / 2; i += 1) {
     if (number % i === 0) dividers.push(i);
@@ -12,11 +15,11 @@ const findDividors = (number) => {
 
 const intersect = (arrA, arrB) => arrA.filter((el) => arrB.includes(el));
 
-const getGcd = (x, y) => Math.max(...intersect(findDividors(x), findDividors(y)));
+const getGcd = (x, y) => Math.max(...intersect(findDivisors(x), findDivisors(y)));
 
 const gcdTaskGenerator = () => {
-  const firstNumber = getRandomNumber();
-  const secondNumber = getRandomNumber();
+  const firstNumber = random(minGuessedNumber, maxGuessedNumber);
+  const secondNumber = random(minGuessedNumber, maxGuessedNumber);
   const question = `${firstNumber} ${secondNumber}`;
   const answer = String(getGcd(firstNumber, secondNumber));
   return { question, answer };
