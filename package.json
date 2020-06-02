@@ -26,6 +26,15 @@
     "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime.js"
   },
+  "keywords": [
+    "brain",
+    "games",
+    "gcd",
+    "even",
+    "prime",
+    "calc",
+    "progression"
+  ],
   "dependencies": {
     "lodash": "^4.17.15",
     "readline-sync": "^1.4.10"
