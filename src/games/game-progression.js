@@ -3,21 +3,18 @@ import runEngine from '../game-engine.js';
 
 const gameRule = 'What number is missing in the progression?';
 const missingTermSign = '..';
-const progressionLength = 10;
 
-const generateProgression = (length = 0) => {
+const getProgression = (first, diff, length = 0) => {
   const progression = [];
-  let currentTerm = random(0, 100);
-  const difference = random(1, 20);
   for (let i = 0; i < length; i += 1) {
-    progression.push(currentTerm += difference);
+    progression.push(first + i * diff);
   }
   return progression;
 };
 
 const genRoundData = () => {
-  const progression = generateProgression(progressionLength);
-  const missingIndex = random(0, progressionLength - 1);
+  const progression = getProgression(random(0, 100), random(1, 20), random(3, 10));
+  const missingIndex = random(0, progression.length - 1);
   const missingTerm = progression[missingIndex];
   progression[missingIndex] = missingTermSign;
   const question = progression.join(' ');
