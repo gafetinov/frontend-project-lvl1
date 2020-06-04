@@ -2,9 +2,9 @@
   "name": "frontend-project-lvl1",
   "version": "1.0.0",
   "description": "",
-  "main": "bin/brain-games.js",
+  "main": "src/game-engine.js",
   "scripts": {
-    "start": "node bin/brain-games.js",
+    "start": "node src/game-engine.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
