@@ -1,6 +1,7 @@
 import random from 'lodash/random.js';
-import playGame from '../game-engine.js';
+import runEngine from '../game-engine.js';
 
+const gameRule = 'What number is missing in the progression?';
 const missingTermSign = '..';
 const progressionLength = 10;
 
@@ -14,7 +15,7 @@ const generateProgression = (length = 0) => {
   return progression;
 };
 
-const progressionTaskGenerator = () => {
+const genRoundData = () => {
   const progression = generateProgression(progressionLength);
   const missingIndex = random(0, progressionLength - 1);
   const missingTerm = progression[missingIndex];
@@ -25,10 +26,7 @@ const progressionTaskGenerator = () => {
 };
 
 const playGameProgression = () => {
-  playGame(
-    'What number is missing in the progression?',
-    progressionTaskGenerator,
-  );
+  runEngine(gameRule, genRoundData);
 };
 
 export default playGameProgression;

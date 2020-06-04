@@ -1,43 +1,39 @@
 import random from 'lodash/random.js';
-import playGame from '../game-engine.js';
+import runEngine from '../game-engine.js';
 
 
-const operations = {
-  0: '-',
-  1: '+',
-  2: '*',
-};
+const gameRule = 'What is the result of the expression?';
+const operations = ['-', '+', '*'];
 
 const getRandomOperation = () => {
-  const operationCount = Object.keys(operations).length;
-  const operationNumber = random(0, operationCount - 1);
+  const operationNumber = random(0, operations.length - 1);
   return operations[operationNumber];
 };
 
-const calculateExpression = (firstNumber, secondNumber, operation) => {
+const calculate = (firstNumber, secondNumber, operation) => {
   switch (operation) {
     case '+':
-      return String(firstNumber + secondNumber);
+      return firstNumber + secondNumber;
     case '-':
-      return String(firstNumber - secondNumber);
+      return firstNumber - secondNumber;
     case '*':
-      return String(firstNumber * secondNumber);
+      return firstNumber * secondNumber;
     default:
       return '!!!Wrong operation!!!';
   }
 };
 
-const arithmeticTaskGenerator = () => {
+const genRoundData = () => {
   const firstNumber = random(0, 50);
   const secondNumber = random(0, 50);
   const operation = getRandomOperation();
   const question = `${firstNumber} ${operation} ${secondNumber}`;
-  const answer = calculateExpression(firstNumber, secondNumber, operation);
+  const answer = String(calculate(firstNumber, secondNumber, operation));
   return { question, answer };
 };
 
 const playCalcGame = () => {
-  playGame('What is the result of the expression?', arithmeticTaskGenerator);
+  runEngine(gameRule, genRoundData);
 };
 
 export default playCalcGame;

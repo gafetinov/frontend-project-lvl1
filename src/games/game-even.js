@@ -1,20 +1,18 @@
 import random from 'lodash/random.js';
-import playGame from '../game-engine.js';
+import runEngine from '../game-engine.js';
 
 
+const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
 const isEven = (number) => number % 2 === 0;
 
-const taskGenerator = () => {
+const genRoundData = () => {
   const question = random(0, 100);
   const answer = isEven(question) ? 'yes' : 'no';
   return { question, answer };
 };
 
 const playEvenGame = () => {
-  playGame(
-    'Answer "yes" if the number is even, otherwise answer "no".',
-    taskGenerator,
-  );
+  runEngine(gameRule, genRoundData);
 };
 
 export default playEvenGame;

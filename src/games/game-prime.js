@@ -1,6 +1,7 @@
 import random from 'lodash/random.js';
-import playGame from '../game-engine.js';
+import runEngine from '../game-engine.js';
 
+const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
   if (number < 2) {
@@ -12,17 +13,14 @@ const isPrime = (number) => {
   return true;
 };
 
-const taskGenerator = () => {
+const genRoundData = () => {
   const question = random(0, 100);
   const answer = isPrime(question) ? 'yes' : 'no';
   return { question, answer };
 };
 
 const playGamePrime = () => {
-  playGame(
-    'Answer "yes" if given number is prime. Otherwise answer "no".',
-    taskGenerator,
-  );
+  runEngine(gameRule, genRoundData);
 };
 
 export default playGamePrime;
